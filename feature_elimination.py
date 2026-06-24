@@ -116,7 +116,7 @@ if uploaded_file is not None:
                     rfecv = RFECV(
                         estimator=rf_model,
                         step=1, 
-                        cv=StratifiedKFold(cv_folds),
+                        cv=StratifiedKFold(cv_folds, shuffle=True, random_state=42),
                         scoring='accuracy',
                         min_features_to_select=1
                     )
